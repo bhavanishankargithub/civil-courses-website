@@ -1,0 +1,1 @@
+export const OWNER_WHATSAPP_NUMBER = '7742341555';

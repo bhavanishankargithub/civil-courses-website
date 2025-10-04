@@ -1,0 +1,13 @@
+.whatsAppIcon {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: transparent;
+    z-index: 100;
+    cursor: pointer;
+    width: 50px;
+}
+
+.whatsAppIconImage {
+    width: 100%;
+}
