@@ -6,6 +6,7 @@ export interface Course {
   image_url: string;
   duration: string;
   level: string;
+  strikedPrice: number;
   price: number;
   topics: string[];
   created_at: string;

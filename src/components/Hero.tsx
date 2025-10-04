@@ -1,10 +1,11 @@
 import "./Hero.css";
 import Navbar from "./Navbar";
+import Logo from "../assets/logo.jpg";
 
 const Hero = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <section className="hero-section">
         <div className="hero-background"></div>
         <div className="hero-container">
@@ -23,13 +24,15 @@ const Hero = () => {
             </p>
             <div className="hero-cta">
               <button className="hero-button primary">Explore Courses</button>
-              <button className="hero-button book-free-session-button secondary">Book Your Free 1:1 Counselling Session</button>
+              <button className="hero-button book-free-session-button secondary">
+                Book Your Free 1:1 Counselling Session
+              </button>
             </div>
           </div>
           <div className="hero-image">
             <div className="hero-image-container">
               <img
-                src="/logo.jpg"
+                src={Logo}
                 alt="ReviNxt Academy Logo"
                 className="hero-logo"
               />

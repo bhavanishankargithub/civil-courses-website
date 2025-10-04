@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import './CourseCard.css';
-import { Clock, Award, BookOpen } from 'lucide-react';
-import type { Course } from '../types/course';
+import { useNavigate } from "react-router-dom";
+import "./CourseCard.css";
+import { Clock, Award, BookOpen } from "lucide-react";
+import type { Course } from "../types/course";
 
 interface CourseCardProps {
   course: Course;
@@ -21,7 +21,11 @@ const CourseCard = ({ course }: CourseCardProps) => {
   return (
     <div className="course-card">
       <div className="course-card-image-wrapper">
-        <img src={course.image_url} alt={course.title} className="course-card-image" />
+        <img
+          src={course.image_url}
+          alt={course.title}
+          className="course-card-image"
+        />
         <div className="course-card-overlay">
           <span className="course-card-level">{course.level}</span>
         </div>
@@ -46,14 +50,21 @@ const CourseCard = ({ course }: CourseCardProps) => {
         </div>
 
         <div className="course-card-price">
+          {/* <del className="price-amount striked-price-amount">${course.strikedPrice}</del> */}
           <span className="price-amount">${course.price}</span>
         </div>
 
         <div className="course-card-actions">
-          <button className="course-card-button know-more" onClick={handleKnowMore}>
+          <button
+            className="course-card-button know-more"
+            onClick={handleKnowMore}
+          >
             Know More
           </button>
-          <button className="course-card-button enroll-now" onClick={handleEnroll}>
+          <button
+            className="course-card-button enroll-now"
+            onClick={handleEnroll}
+          >
             Enroll Now
           </button>
         </div>

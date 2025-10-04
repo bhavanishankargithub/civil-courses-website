@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import "./Navbar.css";
+import Logo from "../assets/logo.jpg";
 
 const navItems = [
   "About Us",
@@ -17,10 +18,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img
-          src="/logo.jpg"
-          alt="logo"
-        />
+        <img src={Logo} alt="logo" />
         <span>ReviNxt Academy</span>
       </div>
 

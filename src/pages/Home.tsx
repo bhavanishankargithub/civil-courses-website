@@ -1,10 +1,11 @@
-import Hero from '../components/Hero';
-import CoursesSection from '../components/CoursesSection';
-import Carousel from '../components/Carousel';
-import Footer from '../components/Footer';
-import './Home.css'
-import CustomPopup from '../components/CustomPopup';
-import ContactUsForm from '../components/ContactUsForm';
+import Hero from "../components/Hero";
+import CoursesSection from "../components/CoursesSection";
+import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
+import "./Home.css";
+import CustomPopup from "../components/CustomPopup";
+import ContactUsForm from "../components/ContactUsForm";
+import WhatsapIcon from "../assets/whatsAppIcon.svg";
 
 const Home = () => {
   return (
@@ -14,16 +15,18 @@ const Home = () => {
       <CoursesSection />
       <Footer />
       <CustomPopup
-        trigger={<div className='whatsAppIcon'>
-          <img
-            src="/whatsAppIcon.svg"
-            alt="whatsapp"
-            className='whatsAppIconImage'
-          />
-        </div>}
-        content={<ContactUsForm/>}
+        trigger={
+          <div className="whatsAppIcon">
+            <img
+              src={WhatsapIcon}
+              alt="whatsapp"
+              className="whatsAppIconImage"
+            />
+          </div>
+        }
+        content={<ContactUsForm />}
         position="top center"
-        triggerType='click'
+        triggerType="click"
       />
     </div>
   );
