@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Carousel />
       <CoursesSection />
+      <Carousel />
       <Footer />
       <CustomPopup
         trigger={
@@ -25,8 +25,6 @@ const Home = () => {
           </div>
         }
         content={<ContactUsForm />}
-        position="top center"
-        triggerType="click"
       />
     </div>
   );

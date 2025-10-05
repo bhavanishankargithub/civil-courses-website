@@ -50,8 +50,8 @@ const CourseCard = ({ course }: CourseCardProps) => {
         </div>
 
         <div className="course-card-price">
-          {/* <del className="price-amount striked-price-amount">${course.strikedPrice}</del> */}
-          <span className="price-amount">${course.price}</span>
+          <span className="price-amount striked-price-amount">₹{course.strikedPrice}</span>
+          <span className="price-amount">₹{course.price}</span>
         </div>
 
         <div className="course-card-actions">

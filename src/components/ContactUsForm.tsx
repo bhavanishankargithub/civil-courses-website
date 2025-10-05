@@ -99,7 +99,7 @@ const ContactUsForm: React.FC = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="submit-btn primary">
           Send Message
         </button>
       </form>

@@ -59,7 +59,7 @@
   max-width: 1400px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
+  grid-template-columns: 1fr 0.6fr;
   gap: 4rem;
   align-items: center;
   z-index: 1;

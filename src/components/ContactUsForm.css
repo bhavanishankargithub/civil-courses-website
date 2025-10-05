@@ -42,6 +42,7 @@
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
+  resize: none;
 }
 
 .form-group input::placeholder,
@@ -59,7 +60,8 @@
   width: 100%;
   padding: 12px;
   background: linear-gradient(90deg, #00b3ff, #00e0ff);
-  color: #fff;
+  /* color: #fff; */
+  color: #0a1929;
   border: none;
   border-radius: 8px;
   font-weight: bold;

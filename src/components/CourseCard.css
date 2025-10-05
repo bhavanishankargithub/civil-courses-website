@@ -160,9 +160,9 @@
   border-radius: 12px;
   border-left: 4px solid #00e5ff;
   transition: all 0.3s ease;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  gap: 10px; */
+  gap: 10px;
 }
 
 .course-card:hover .course-card-price {
@@ -180,7 +180,9 @@
 }
 
 .striked-price-amount {
-  text-decoration: line-through !important;
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #00e5ff;
 }
 
 .course-card-actions {

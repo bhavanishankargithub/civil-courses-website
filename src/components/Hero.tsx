@@ -1,6 +1,8 @@
 import "./Hero.css";
 import Navbar from "./Navbar";
 import Logo from "../assets/logo.jpg";
+import CustomPopup from "./CustomPopup";
+import ContactUsForm from "./ContactUsForm";
 
 const Hero = () => {
   return (
@@ -24,9 +26,14 @@ const Hero = () => {
             </p>
             <div className="hero-cta">
               <button className="hero-button primary">Explore Courses</button>
-              <button className="hero-button book-free-session-button secondary">
-                Book Your Free 1:1 Counselling Session
-              </button>
+              <CustomPopup
+                trigger={
+                  <button className="hero-button book-free-session-button secondary">
+                    Book Your Free 1:1 Counselling Session
+                  </button>
+                }
+                content={<ContactUsForm />}
+              />
             </div>
           </div>
           <div className="hero-image">
