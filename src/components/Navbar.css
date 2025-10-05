@@ -8,28 +8,32 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow: hidden;
+  height: 70px;
 }
 
 .navbar::before {
   content: '';
   position: absolute;
-  top: 70px;
+  bottom: 0px;
   left: 0;
   right: 0;
   height: 3px;
   background: linear-gradient(270deg, transparent 0%, #00e5ff 50%, transparent 100%);
   animation: lineSlide 7s ease-in-out infinite;
+  overflow-x: hidden;
 }
 
 .navbar::after {
   content: '';
   position: absolute;
-  top: 70px;
+  bottom: 0px;
   left: 0;
   right: 0;
   height: 3px;
   background: linear-gradient(270deg, transparent 0%, #00e5ff 50%, transparent 100%);
   animation: lineSlide 3.5s ease-in-out infinite;
+  overflow-x: hidden;
 }
 
 .logo {

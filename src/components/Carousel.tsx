@@ -1,39 +1,46 @@
 import { useState, useEffect } from 'react';
 import './Carousel.css';
+import LiveClasses from '../assets/liveInteractiveClasses.png'
+import IndustryRelevantCurriculum from '../assets/industryRelevantCurriculum.jpg'
+import LearnFromIndustryProfessionals from '../assets/learnFromIndustryProfessionals.jpg'
+import ProjectBasedLearning from '../assets/projectBasedLearning.png'
+import DedicatedDoubtSolving from '../assets/dedicatedDoubtSolving.png'
+import ExpertSupport from '../assets/expertSupport.png'
+import CertificateOfCompletion from '../assets/certificationComplete.png'
 
 const inspiringImages = [
   {
-    url: 'https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: LiveClasses,
     title: '🎯 100% Live & Interactive Classes',
     description: 'Experience real-time learning with expert mentors — no pre-recorded videos, no passive watching.'
   },
   {
-    url: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: IndustryRelevantCurriculum,
     title: '🏗 Industry-Relevant Curriculum',
     description: 'Learn the exact skills top companies are hiring for — practical, hands-on, and aligned with real-world industry needs, not unnecessary theory.'
   },
   {
-    url: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: LearnFromIndustryProfessionals,
     title: '👨‍🏫 Learn from Industry Professionals',
     description: 'Get trained by working professionals who use Revit daily in their projects — learn real hacks, technical workflows, and best practices from the field.'
   },
   {
-    url: 'https://images.pexels.com/photos/1106476/pexels-photo-1106476.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: ProjectBasedLearning,
     title: '🧩 Project-Based Learning',
     description: 'Every module includes practical projects so you can apply what you learn, build confidence, and gain real-world experience.'
   },
   {
-    url: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: DedicatedDoubtSolving,
     title: '💬 Dedicated Doubt Solving & Feedback',
     description: 'Get personalized feedback on assignments and live doubt-solving sessions to ensure your learning stays on track.'
   },
   {
-    url: 'https://images.pexels.com/photos/1106476/pexels-photo-1106476.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: ExpertSupport,
     title: '📞 1:1 Expert Support',
     description: 'Still stuck somewhere? Drop a message on our chat support — we’ll schedule a one-on-one session with a subject matter expert if needed.'
   },
   {
-    url: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    url: CertificateOfCompletion,
     title: '🎓 Certificate of Completion',
     description: 'Receive a certificate that validates your skills and adds weight to your resume.'
   }
