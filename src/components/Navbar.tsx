@@ -19,7 +19,9 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="logo">
         <img src={Logo} alt="logo" />
-        <span className="logo-text-nav logo-text-with-blue-gradient">ReviNxt Academy</span>
+        <span className="logo-text-nav logo-text-with-blue-gradient">
+          ReviNXT Academy
+        </span>
       </div>
 
       <ul className={classNames("nav-links", { open: isOpen })}>

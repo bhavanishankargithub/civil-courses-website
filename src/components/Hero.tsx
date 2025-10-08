@@ -13,16 +13,17 @@ const Hero = () => {
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Welcome to <span className="hero-brand">ReviNxt Academy</span>
+              Welcome to <span className="hero-brand">ReviNXT Academy</span>
             </h1>
             <p className="hero-subtitle">
-              Transform Your Career with Expert-Led Civil Engineering Courses
+              Master modern civil engineering tools through live, hands-on
+              training - bridging college learning to real-world skills.
             </p>
             <p className="hero-description">
-              Master the skills you need to excel in structural design,
-              construction management, and infrastructure development. Join
-              thousands of engineers advancing their careers with our
-              comprehensive, industry-focused curriculum.
+              With real project-based learning, freelancing opportunities, and a
+              supportive community, ReviNXT is more than a learning platform -
+              it's a career transformation hub for engineers ready to thrive in
+              the modern construction world.
             </p>
             <div className="hero-cta">
               <button className="hero-button primary">Explore Courses</button>
@@ -40,7 +41,7 @@ const Hero = () => {
             <div className="hero-image-container">
               <img
                 src={Logo}
-                alt="ReviNxt Academy Logo"
+                alt="ReviNXT Academy Logo"
                 className="hero-logo"
               />
             </div>

@@ -45,12 +45,14 @@ const CourseCard = ({ course }: CourseCardProps) => {
           </div>
           <div className="course-card-meta-item">
             <BookOpen className="course-card-icon" size={16} />
-            <span>{course.topics.length} Topics</span>
+            <span>Certification</span>
           </div>
         </div>
 
         <div className="course-card-price">
-          <span className="price-amount striked-price-amount">₹{course.strikedPrice}</span>
+          <span className="price-amount striked-price-amount">
+            ₹{course.strikedPrice}
+          </span>
           <span className="price-amount">₹{course.price}</span>
         </div>
 

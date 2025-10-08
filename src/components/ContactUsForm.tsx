@@ -1,4 +1,3 @@
-
 import React, { useState, type FormEvent } from "react";
 import "./ContactUsForm.css";
 import { OWNER_WHATSAPP_NUMBER } from "../data/config";
@@ -21,7 +20,7 @@ const ContactUsForm: React.FC = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -49,6 +48,9 @@ const ContactUsForm: React.FC = () => {
   return (
     <div className="contact-form-container">
       <form className="contact-form" onSubmit={handleSubmit}>
+        {/* <div className="form-close-arrow-container">
+          <h1 className="form-close-arrow">←</h1>
+        </div> */}
         <h2 className="form-title">Contact Us</h2>
         <div className="form-group">
           <input
@@ -56,16 +58,6 @@ const ContactUsForm: React.FC = () => {
             name="name"
             placeholder="Full Name"
             value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -82,23 +74,31 @@ const ContactUsForm: React.FC = () => {
         </div>
         <div className="form-group">
           <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={formData.email}
             onChange={handleChange}
           />
         </div>
         <div className="form-group">
+          <input
+            type="text"
+            name="subject"
+            placeholder="Course / Interest"
+            value={formData.subject}
+            onChange={handleChange}
+          />
+        </div>
+        {/* <div className="form-group">
           <textarea
             name="message"
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            required
           />
-        </div>
+        </div> */}
         <button type="submit" className="submit-btn primary">
           Send Message
         </button>
@@ -108,3 +108,25 @@ const ContactUsForm: React.FC = () => {
 };
 
 export default ContactUsForm;
+
+// Course/Interest Dropdown Options
+
+// AutoCAD
+
+// Revit Structure
+
+// ETABS / STAAD Pro
+
+// Revit MEPF
+
+// Civil 3D
+
+// Revit Architecture
+
+// Primavera
+
+// Navisworks
+
+// BIM
+
+// Other Course (please specify)

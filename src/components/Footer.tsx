@@ -1,5 +1,14 @@
-import './Footer.css';
-import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import "./Footer.css";
+import {
+  Building2,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,11 +18,11 @@ const Footer = () => {
           <div className="footer-column">
             <div className="footer-logo">
               <Building2 size={32} />
-              <span>ReviNxt Academy</span>
+              <span>ReviNXT Academy</span>
             </div>
             <p className="footer-description">
-              Empowering civil engineers with world-class education and industry-leading expertise.
-              Build your future with us.
+              Empowering civil engineers with world-class education and
+              industry-leading expertise. Build your future with us.
             </p>
             <div className="footer-social">
               <a href="#" className="social-link">
@@ -34,22 +43,42 @@ const Footer = () => {
           <div className="footer-column">
             <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">All Courses</a></li>
-              <li><a href="#">Instructors</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">All Courses</a>
+              </li>
+              <li>
+                <a href="#">Instructors</a>
+              </li>
+              <li>
+                <a href="#">Testimonials</a>
+              </li>
+              <li>
+                <a href="#">FAQs</a>
+              </li>
             </ul>
           </div>
 
           <div className="footer-column">
             <h3 className="footer-title">Resources</h3>
             <ul className="footer-links">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Career Guide</a></li>
-              <li><a href="#">Study Materials</a></li>
-              <li><a href="#">Certifications</a></li>
-              <li><a href="#">Student Portal</a></li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Career Guide</a>
+              </li>
+              <li>
+                <a href="#">Study Materials</a>
+              </li>
+              <li>
+                <a href="#">Certifications</a>
+              </li>
+              <li>
+                <a href="#">Student Portal</a>
+              </li>
             </ul>
           </div>
 
@@ -62,7 +91,7 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <Phone size={18} />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9027771731</span>
               </div>
               <div className="contact-item">
                 <Mail size={18} />
@@ -76,7 +105,7 @@ const Footer = () => {
           <div className="footer-divider"></div>
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              &copy; 2025 ReviNxt Academy. All rights reserved.
+              &copy; 2025 ReviNXT Academy. All rights reserved.
             </p>
             <div className="footer-legal">
               <a href="#">Privacy Policy</a>

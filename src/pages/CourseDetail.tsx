@@ -1,19 +1,76 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { courses } from '../data/courses';
-import './CourseDetail.css';
-import { Clock, Award, BookOpen, ArrowLeft, CheckCircle } from 'lucide-react';
+import { useParams, useNavigate } from "react-router-dom";
+import { courses } from "../data/courses";
+import "./CourseDetail.css";
+import { Clock, Award, BookOpen, ArrowLeft, CheckCircle } from "lucide-react";
+
+const whatMakesUsDifferentData = [
+  {
+    emoji: "🎯",
+    title: "100% Live & Interactive Classes",
+    description:
+      "Experience real-time learning with expert mentors - no pre-recorded videos, no passive watching.",
+  },
+  {
+    emoji: "🏗️",
+    title: "Industry-Driven Curriculum",
+    description:
+      "Focus on the exact Revit skills recruiters ask for. Learn the exact skills top companies are hiring for - practical, hands-on, and aligned with real-world industry needs, not unnecessary theory.",
+  },
+  {
+    emoji: "👨‍🏫",
+    title: "Learn from Industry Professionals",
+    description:
+      "Get trained by working professionals who use Revit daily in their projects - learn real hacks, technical workflows, and best practices from the field. Get insider techniques, shortcuts, and site realities from people who design and build every day.",
+  },
+  {
+    emoji: "🧩",
+    title: "Project-Based Learning",
+    description:
+      "Every module includes practical projects so you can apply what you learn, build confidence, and gain real-world experience.",
+  },
+  {
+    emoji: "💬",
+    title: "Dedicated Doubt Solving & Feedback",
+    description:
+      "Get personalized feedback on assignments and live doubt-solving sessions to ensure your learning stays on track.",
+  },
+  {
+    emoji: "📞",
+    title: "1:1 Expert Support",
+    description:
+      "Still stuck somewhere? Drop a message on our chat support - we’ll schedule a one-on-one session with a subject matter expert if needed.",
+  },
+  {
+    emoji: "🎓",
+    title: "Certificate of Completion",
+    description:
+      "Receive an industry-recognized certificate that validates your skills and adds weight to your resume.",
+  },
+  {
+    emoji: "💼",
+    title: "Paid Freelancing Opportunity",
+    description:
+      "Where students are provided the opportunity to deliver the work and get paid.",
+  },
+  {
+    emoji: "🎓",
+    title: "Gurukul Connect",
+    description:
+      "Top performers will be having the TA opportunities at ReviNXT Community...And much more!",
+  },
+];
 
 const CourseDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const course = courses.find(c => c.id === id);
+  const course = courses.find((c) => c.id === id);
 
   if (!course) {
     return (
       <div className="course-detail-error">
         <h2>Course not found</h2>
-        <button onClick={() => navigate('/')}>Return to Home</button>
+        <button onClick={() => navigate("/")}>Return to Home</button>
       </div>
     );
   }
@@ -22,9 +79,13 @@ const CourseDetail = () => {
     <div className="course-detail-page">
       <div className="course-detail-hero">
         <div className="course-detail-hero-overlay"></div>
-        <img src={course.image_url} alt={course.title} className="course-detail-hero-image" />
+        <img
+          src={course.image_url}
+          alt={course.title}
+          className="course-detail-hero-image"
+        />
         <div className="course-detail-hero-content">
-          <button className="back-button" onClick={() => navigate('/')}>
+          <button className="back-button" onClick={() => navigate("/")}>
             <ArrowLeft size={20} />
             Back to Courses
           </button>
@@ -80,12 +141,30 @@ const CourseDetail = () => {
               </div>
               <div className="detail-item">
                 <h3 className="detail-label">Topics Covered</h3>
-                <p className="detail-value">{course.topics.length} Major Topics</p>
+                <p className="detail-value">
+                  {course.topics.length} Major Topics
+                </p>
               </div>
               <div className="detail-item">
                 <h3 className="detail-label">Certificate</h3>
                 <p className="detail-value">Upon Completion</p>
               </div>
+            </div>
+          </section>
+
+          <section className="course-section">
+            <h2 className="section-title">What Makes Us Different?</h2>
+            <div className="what-makes-us-different-content">
+              {whatMakesUsDifferentData.map((item, index) => (
+                <div className="detail-item" key={index}>
+                  <h3 className="detail-label">
+                    {item.emoji} {item.title}
+                  </h3>
+                  <p className="what-makes-us-different-para">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
         </div>
@@ -94,19 +173,21 @@ const CourseDetail = () => {
           <div className="sidebar-card">
             <div className="price-section">
               <span className="price-label">Course Price</span>
-              <span className="price-value">${course.price}</span>
+              <span className="price-value">₹{course.price}</span>
             </div>
-            <button className="enroll-button-large">
-              Enroll Now
-            </button>
+            <button className="enroll-button-large">Enroll Now</button>
             <div className="features-list">
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>Lifetime Access</span>
+                <span>100% Live Sessions</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>Expert Instruction</span>
+                <span>Dedicated Doubt Support</span>
+              </div>
+              <div className="feature-item">
+                <CheckCircle size={20} />
+                <span>Project-Based Learning</span>
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} />
@@ -114,11 +195,7 @@ const CourseDetail = () => {
               </div>
               <div className="feature-item">
                 <CheckCircle size={20} />
-                <span>24/7 Support</span>
-              </div>
-              <div className="feature-item">
-                <CheckCircle size={20} />
-                <span>Downloadable Resources</span>
+                <span>Paid Freelancing & TA Roles</span>
               </div>
             </div>
           </div>

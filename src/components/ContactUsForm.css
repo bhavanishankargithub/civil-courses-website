@@ -19,6 +19,18 @@
   position: relative;
 }
 
+/* .form-close-arrow-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form-close-arrow {
+  margin: 0%;
+  padding: 0%;
+  line-height: 10px;
+  color: #00c8ff;
+} */
+
 .form-title {
   text-align: center;
   color: #00c8ff;
@@ -41,7 +53,9 @@
   color: #e0f7ff;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   resize: none;
 }
 
@@ -67,7 +81,9 @@
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 .submit-btn:hover {
