@@ -1,15 +1,17 @@
 import type { Course } from "../types/course";
+import ETBSCourse from "../assets/etbsCourseImage.jpg";
+import AutoCadCourseImg from "../assets/autocadCourseImage.jpg";
+import RevitCourseImage from "../assets/revitCourseImage.jpg";
 
 export const courses: Course[] = [
   {
     id: "1",
     title: "Revit Structure — Professional Course for Civil Engineers",
     description:
-      "Master structural modeling with Revit — tailored for civil engineers.",
+      "Upskill, earn & save! Check availability & scholarships: 9027771731 📲.",
     full_description:
       "The Revit Structural Program by ReviNXT Academy is a 2+1 month live training designed for civil engineers to move beyond AutoCAD and master 3D structural modelling in Revit. Through real project-based learning, you'll model and detail complete structures — from a G+7 concrete building to a steel warehouse. Every session is practical, mentor-led, and focused on real construction workflows. By the end, you'll have a professional portfolio and the confidence to deliver structural projects with precision and speed.",
-    image_url:
-      "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image_url: RevitCourseImage,
     duration: "8+4 weeks",
     level: "Hands on", ///      Remove
     strikedPrice: 21000,
@@ -30,8 +32,7 @@ export const courses: Course[] = [
       "Master 2D drafting and detailing skills essential for every civil engineer.",
     full_description:
       "Comprehensive training in highway engineering covering geometric design, pavement design, traffic engineering, and highway drainage. Learn about alignment design, sight distances, superelevation, intersection design, and modern highway planning techniques. Includes AutoCAD and design software tutorials.",
-    image_url:
-      "https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image_url: AutoCadCourseImg,
     duration: "4+4 weeks",
     level: "Hands on",
     strikedPrice: 8000,
@@ -51,8 +52,7 @@ export const courses: Course[] = [
     description: "Under Research and Development",
     full_description:
       "Dive deep into concrete technology, from material properties to mix design and quality control. This course covers concrete composition, workability, strength testing, admixtures, durability, and reinforced concrete design principles. Includes practical case studies and real-world applications in construction projects.",
-    image_url:
-      "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image_url: ETBSCourse,
     duration: "8 weeks",
     level: "Hands on",
     strikedPrice: 21000,

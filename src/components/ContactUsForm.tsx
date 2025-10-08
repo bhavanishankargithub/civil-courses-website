@@ -4,19 +4,17 @@ import { OWNER_WHATSAPP_NUMBER } from "../data/config";
 
 interface ContactFormData {
   name: string;
-  email: string;
   phone: string;
-  subject: string;
-  message: string;
+  email: string;
+  course: string;
 }
 
 const ContactUsForm: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
-    email: "",
     phone: "",
-    subject: "",
-    message: "",
+    email: "",
+    course: "",
   });
 
   const handleChange = (
@@ -32,10 +30,9 @@ const ContactUsForm: React.FC = () => {
 📩 *New Contact Form Submission*
 ---------------------------------
 👤 *Name:* ${formData.name}
-📧 *Email:* ${formData.email}
 📱 *Phone:* ${formData.phone}
-📝 *Subject:* ${formData.subject}
-💬 *Message:* ${formData.message}
+📧 *Email:* ${formData.email}
+📝 *Subject:* ${formData.course}
   `.trim();
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -84,21 +81,12 @@ const ContactUsForm: React.FC = () => {
         <div className="form-group">
           <input
             type="text"
-            name="subject"
+            name="course"
             placeholder="Course / Interest"
-            value={formData.subject}
+            value={formData.course}
             onChange={handleChange}
           />
         </div>
-        {/* <div className="form-group">
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={4}
-          />
-        </div> */}
         <button type="submit" className="submit-btn primary">
           Send Message
         </button>
