@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./CourseCard.css";
-import { Clock, Award, BookOpen } from "lucide-react";
+import { Clock, BookOpen } from "lucide-react";
 import type { Course } from "../types/course";
 
 interface CourseCardProps {
@@ -40,7 +40,8 @@ const CourseCard = ({ course }: CourseCardProps) => {
             <span>{course.duration}</span>
           </div>
           <div className="course-card-meta-item">
-            <Award className="course-card-icon" size={16} />
+            {/* <Award className="course-card-icon" size={16} /> */}
+            <span className="course-card-icon">⚠</span>
             <span>{course.level}</span>
           </div>
           <div className="course-card-meta-item">

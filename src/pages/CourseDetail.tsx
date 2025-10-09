@@ -157,12 +157,12 @@ const CourseDetail = () => {
             <div className="what-makes-us-different-content">
               {whatMakesUsDifferentData.map((item, index) => (
                 <div className="detail-item" key={index}>
-                  <h3 className="detail-label">
-                    {item.emoji} {item.title}
+                  <h3 className="detail-label what-makes-us-different-label">
+                    <CheckCircle className="topic-icon" size={24} /> {item.title}
                   </h3>
-                  <p className="what-makes-us-different-para">
+                  {/* <p className="what-makes-us-different-para">
                     {item.description}
-                  </p>
+                  </p> */}
                 </div>
               ))}
             </div>
