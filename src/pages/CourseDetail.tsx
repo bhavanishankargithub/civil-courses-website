@@ -2,6 +2,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { courses } from "../data/courses";
 import "./CourseDetail.css";
 import { Clock, Award, BookOpen, ArrowLeft, CheckCircle } from "lucide-react";
+import { sendWhatsappMessage } from "../data/helper";
+import { useLayoutEffect, useRef, useState } from "react";
+import type { ScheduleArrayType } from "../data/schedule";
+import DownArrowIcon from "../assets/downArrowIcon.svg";
 
 const whatMakesUsDifferentData = [
   {
@@ -65,6 +69,12 @@ const CourseDetail = () => {
   const navigate = useNavigate();
 
   const course = courses.find((c) => c.id === id);
+
+  const sendCheckAvailabilityWhatsappMessage = () => {
+    sendWhatsappMessage(
+      "Hi ReviNXT! I'd like to check if seats, scholarships, freelancing opportunities, and installment options are available!",
+    );
+  };
 
   if (!course) {
     return (
@@ -168,36 +178,78 @@ const CourseDetail = () => {
               ))}
             </div>
           </section>
+
+          <section>
+            {course.schedule && (
+              <>
+                <h2 className="section-title">Course Schedule</h2>
+                <CourseSchedule schedule={course.schedule} />
+              </>
+            )}
+          </section>
         </div>
 
         <aside className="course-detail-sidebar">
-          <div className="sidebar-card">
-            <div className="price-section">
-              <span className="price-label">Course Price</span>
-              <span className="price-value">₹{course.price}</span>
+          <div className="sidebar-card-container">
+            <div className="sidebar-card">
+              <div className="price-section">
+                <span className="price-label">Course Price</span>
+                <span className="price-value">₹{course.price}</span>
+              </div>
+              <button className="enroll-button-large">Enroll Now</button>
+              <div className="features-list">
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>100% Live Sessions</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Dedicated Doubt Support</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Project-Based Learning</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Certificate of Completion</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Paid Freelancing & TA Roles</span>
+                </div>
+              </div>
             </div>
-            <button className="enroll-button-large">Enroll Now</button>
-            <div className="features-list">
-              <div className="feature-item">
-                <CheckCircle size={20} />
-                <span>100% Live Sessions</span>
+            <div className="sidebar-card">
+              <div className="price-section">
+                <span className="check-availability-label">
+                  CHECK AVAILABILITY:
+                </span>
+                {/* <span className="price-value">₹{course.price}</span> */}
               </div>
-              <div className="feature-item">
-                <CheckCircle size={20} />
-                <span>Dedicated Doubt Support</span>
+              <div className="features-list">
+                <div className="feature-item">
+                  <span className="unlock-now-label">Unlock:</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Scholarship Seat</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Paid Freelancing Opportunity</span>
+                </div>
+                <div className="feature-item">
+                  <CheckCircle size={20} />
+                  <span>Installment Option</span>
+                </div>
               </div>
-              <div className="feature-item">
-                <CheckCircle size={20} />
-                <span>Project-Based Learning</span>
-              </div>
-              <div className="feature-item">
-                <CheckCircle size={20} />
-                <span>Certificate of Completion</span>
-              </div>
-              <div className="feature-item">
-                <CheckCircle size={20} />
-                <span>Paid Freelancing & TA Roles</span>
-              </div>
+              <button
+                className="enroll-button-large check-availability-button"
+                onClick={sendCheckAvailabilityWhatsappMessage}
+              >
+                Check availability now!
+              </button>
             </div>
           </div>
         </aside>
@@ -207,3 +259,122 @@ const CourseDetail = () => {
 };
 
 export default CourseDetail;
+
+type CourseScheduleProps = {
+  schedule: ScheduleArrayType;
+};
+
+const CourseSchedule = ({ schedule }: CourseScheduleProps) => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [bonusExpand, setBonusExpand] = useState(false);
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  return (
+    <div className="course-schedule-container">
+      {schedule.map((week, index) => (
+        <div key={index} className="course-schedule-week">
+          <div
+            className="course-schedule-week-header"
+            onClick={() => toggleExpand(index)}
+          >
+            <span className="course-schedule-week-title">{week.title}</span>
+            <span
+              className={`course-schedule-toggle-icon ${
+                expandedIndex === index ? "rotate-icon" : ""
+              }`}
+            >
+              <img
+                src={DownArrowIcon}
+                alt="Down Arrow"
+                width={25}
+                height={25}
+              />
+            </span>
+          </div>
+
+          <ExpandableSection isExpanded={expandedIndex === index}>
+            <div className="course-schedule-details">
+              {week.details.map((detail, idx) => (
+                <div key={idx} className="course-schedule-detail-item">
+                  <p className="course-schedule-what-learn">
+                    {detail.whatWillYouLearn}
+                  </p>
+                  <p className="course-schedule-outcome">{detail.outCome}</p>
+                </div>
+              ))}
+            </div>
+          </ExpandableSection>
+        </div>
+      ))}
+      <div className="course-schedule-week">
+        <div
+          className="course-schedule-week-header"
+          onClick={() => setBonusExpand((prev) => !prev)}
+        >
+          <span className="course-schedule-week-title">
+            🎓 Bonus: Part-Time Freelancing Opportunity {"(1 Month)"}
+          </span>
+          <span
+            className={`course-schedule-toggle-icon ${
+              bonusExpand ? "rotate-icon" : ""
+            }`}
+          >
+            <img src={DownArrowIcon} alt="Down Arrow" width={25} height={25} />
+          </span>
+        </div>
+
+        <ExpandableSection isExpanded={bonusExpand}>
+          <div className="course-schedule-details">
+            <div className="course-schedule-detail-item">
+              <p className="course-schedule-what-learn">
+                🧩 Description: Work on a real client project under mentorship —
+                independently develop a complete Revit Structural model.
+              </p>
+              <p className="course-schedule-outcome">
+                🎯 Learning Outcome: Apply your knowledge on live projects,
+                manage deadlines, and gain freelancing experience before you
+                graduate.
+              </p>
+            </div>
+          </div>
+        </ExpandableSection>
+      </div>
+    </div>
+  );
+};
+
+type ExpandableSectionProps = {
+  isExpanded: boolean;
+  children: React.ReactNode;
+};
+
+const ExpandableSection = ({
+  isExpanded,
+  children,
+}: ExpandableSectionProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState("0px");
+
+  useLayoutEffect(() => {
+    if (isExpanded && contentRef.current) {
+      setHeight(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setHeight("0px");
+    }
+  }, [isExpanded]);
+
+  return (
+    <div
+      ref={contentRef}
+      className={`course-schedule-expandable ${
+        isExpanded ? "expanded" : "collapsed"
+      }`}
+      style={{ maxHeight: height }}
+    >
+      <div className="course-schedule-expandable-inner">{children}</div>
+    </div>
+  );
+};

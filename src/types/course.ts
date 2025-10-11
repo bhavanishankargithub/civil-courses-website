@@ -1,3 +1,5 @@
+import type { ScheduleArrayType } from "../data/schedule";
+
 export interface Course {
   id: string;
   title: string;
@@ -10,4 +12,5 @@ export interface Course {
   price: number;
   topics: string[];
   created_at: string;
+  schedule?: ScheduleArrayType;
 }

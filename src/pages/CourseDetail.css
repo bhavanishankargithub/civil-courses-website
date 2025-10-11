@@ -338,12 +338,17 @@
   animation: fadeInRight 1s ease-out;
 }
 
+.sidebar-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .sidebar-card {
   background: linear-gradient(135deg, #1a2942 0%, #0f2642 100%);
   border: 2px solid rgba(0, 229, 255, 0.3);
   border-radius: 25px;
   padding: 2.5rem;
-  position: sticky;
   top: 2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
@@ -360,6 +365,20 @@
   color: #b0c4de;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.check-availability-label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00e5ff 0%, #00aeff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.unlock-now-label {
+  color: #00e5ff;
 }
 
 .price-value {
@@ -412,6 +431,11 @@
 .enroll-button-large:hover::before {
   width: 400px;
   height: 400px;
+}
+
+.check-availability-button {
+  margin: 0px;
+  margin-top: 30px;
 }
 
 .features-list {
@@ -547,4 +571,89 @@
   .price-value {
     font-size: 2.5rem;
   }
+}
+
+.course-schedule-container {
+  background-color: #021d2c;
+  color: #00c8ff;
+  border-radius: 10px;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.course-schedule-week {
+  border: 1px solid #00c8ff;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  background-color: #042436;
+  transition: all 0.3s ease;
+}
+
+.course-schedule-week:hover {
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+  transform: scale(1.01);
+}
+
+.course-schedule-week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 25px 35px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #00c8ff;
+  transition: background-color 0.3s ease;
+}
+
+.course-schedule-week-header:hover {
+  background-color: rgba(0, 200, 255, 0.1);
+}
+
+.course-schedule-toggle-icon {
+  font-size: 16px;
+  color: #00c8ff;
+  transition: transform 0.3s ease;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+.course-schedule-expandable {
+  overflow: hidden;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease;
+  opacity: 0;
+}
+
+.course-schedule-expandable.expanded {
+  opacity: 1;
+}
+
+.course-schedule-expandable-inner {
+  padding: 0 20px 15px 25px;
+  background-color: #032032;
+  border-top: 1px solid #00c8ff;
+  border-radius: 0px 0 10px 10px;
+}
+
+.course-schedule-detail-item {
+  margin-top: 15px;
+  border-left: 3px solid #00c8ff;
+  padding-left: 10px;
+}
+
+.course-schedule-what-learn {
+  color: #ffffff;
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.course-schedule-outcome {
+  color: #00c8ff;
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
 }

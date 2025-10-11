@@ -1,3 +1,4 @@
+import { INSTAGRAM_LINK, LINKEDIN_LINK } from "../data/config";
 import "./Footer.css";
 import {
   Building2,
@@ -25,16 +26,26 @@ const Footer = () => {
               industry-leading expertise. Build your future with us.
             </p>
             <div className="footer-social">
-              <a href="#" className="social-link">
+              <a className="social-link">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a className="social-link">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a
+                href={LINKEDIN_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a
+                href={INSTAGRAM_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
                 <Instagram size={20} />
               </a>
             </div>

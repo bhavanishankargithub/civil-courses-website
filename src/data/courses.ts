@@ -2,6 +2,7 @@ import type { Course } from "../types/course";
 import ETBSCourse from "../assets/etbsCourseImage.jpg";
 import AutoCadCourseImg from "../assets/autocadCourseImage.jpg";
 import RevitCourseImage from "../assets/revitCourseImage.jpg";
+import { scheduleForCourse1 } from "./schedule";
 
 export const courses: Course[] = [
   {
@@ -24,6 +25,7 @@ export const courses: Course[] = [
       "Industry Workflows",
     ],
     created_at: new Date().toISOString(),
+    schedule: scheduleForCourse1,
   },
   {
     id: "3",

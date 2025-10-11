@@ -1,6 +1,6 @@
 import React, { useState, type FormEvent } from "react";
 import "./ContactUsForm.css";
-import { OWNER_WHATSAPP_NUMBER } from "../data/config";
+import { sendWhatsappMessage } from "../data/helper";
 
 interface ContactFormData {
   name: string;
@@ -35,11 +35,7 @@ const ContactUsForm: React.FC = () => {
 📝 *Subject:* ${formData.course}
   `.trim();
 
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-
-    const whatsappURL = `https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodedMessage}`;
-
-    window.open(whatsappURL, "_blank");
+    sendWhatsappMessage(whatsappMessage);
   };
 
   return (
