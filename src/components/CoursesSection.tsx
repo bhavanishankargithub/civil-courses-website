@@ -1,6 +1,6 @@
-import { courses } from '../data/courses';
-import CourseCard from './CourseCard';
-import './CoursesSection.css';
+import { courses } from "../data/courses";
+import CourseCard from "./CourseCard";
+import "./CoursesSection.css";
 
 const CoursesSection = () => {
   return (
@@ -9,7 +9,8 @@ const CoursesSection = () => {
         <div className="courses-header">
           <h2 className="courses-title">Our Featured Courses</h2>
           <p className="courses-subtitle">
-            Explore our comprehensive range of civil engineering courses designed by industry experts
+            Explore our comprehensive range of civil engineering courses
+            designed by industry experts
           </p>
         </div>
         <div className="courses-grid">

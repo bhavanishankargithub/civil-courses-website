@@ -1,4 +1,3 @@
-
 .custom-popup-container-unique12345 {
   position: relative;
   display: inline-block;
@@ -69,9 +68,11 @@
     #00e5ff
   );
   animation: custom-popup-border-spin-unique12345 3s linear infinite;
-  mask: linear-gradient(#fff 0 0) content-box,
+  mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -84,8 +85,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .custom-popup-modal-overlay-unique12345 {

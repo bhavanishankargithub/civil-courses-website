@@ -6,15 +6,23 @@
 }
 
 .courses-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 90% 80%, rgba(0, 174, 255, 0.05) 0%, transparent 50%);
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(0, 229, 255, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(0, 174, 255, 0.05) 0%,
+      transparent 50%
+    );
   pointer-events: none;
 }
 

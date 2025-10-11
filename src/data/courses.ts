@@ -8,7 +8,7 @@ export const courses: Course[] = [
     id: "1",
     title: "Revit Structure — Professional Course for Civil Engineers",
     description:
-      '🚀 Scholarship, Freelancing & Installment Options - Check Now!',
+      "🚀 Scholarship, Freelancing & Installment Options - Check Now!",
     full_description:
       "The Revit Structural Program by ReviNXT Academy is a 2+1 month live training designed for civil engineers to move beyond AutoCAD and master 3D structural modelling in Revit. Through real project-based learning, you'll model and detail complete structures — from a G+7 concrete building to a steel warehouse. Every session is practical, mentor-led, and focused on real construction workflows. By the end, you'll have a professional portfolio and the confidence to deliver structural projects with precision and speed.",
     image_url: RevitCourseImage,

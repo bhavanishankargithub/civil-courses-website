@@ -6,19 +6,23 @@
 }
 
 .carousel-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 229, 255, 0.08) 0%,
+    transparent 70%
+  );
   animation: carouselPulse 10s ease-in-out infinite;
 }
 
 @keyframes carouselPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
   }
   50% {
@@ -230,7 +234,7 @@
 }
 
 .carousel-indicator::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;

@@ -41,7 +41,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({ trigger, content }) => {
               {content}
             </div>
           </div>,
-          document.body
+          document.body,
         )}
     </>
   );

@@ -98,7 +98,9 @@ const Carousel = () => {
             {inspiringImages.map((image, index) => (
               <div
                 key={index}
-                className={`carousel-slide ${index === currentIndex ? "active" : ""}`}
+                className={`carousel-slide ${
+                  index === currentIndex ? "active" : ""
+                }`}
               >
                 <img
                   src={image.url}
@@ -124,7 +126,9 @@ const Carousel = () => {
           {inspiringImages.map((_, index) => (
             <button
               key={index}
-              className={`carousel-indicator ${index === currentIndex ? "active" : ""}`}
+              className={`carousel-indicator ${
+                index === currentIndex ? "active" : ""
+              }`}
               onClick={() => goToSlide(index)}
             />
           ))}
