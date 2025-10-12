@@ -130,7 +130,7 @@ const CourseDetail = () => {
             <p className="section-text">{course.full_description}</p>
           </section>
 
-          <section className="course-section">
+          {/* <section className="course-section">
             <h2 className="section-title">What You'll Learn</h2>
             <div className="topics-grid">
               {course.topics.map((topic, index) => (
@@ -140,7 +140,7 @@ const CourseDetail = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </section> */}
 
           <section className="course-section">
             <h2 className="section-title">Course Details</h2>
@@ -166,6 +166,15 @@ const CourseDetail = () => {
             </div>
           </section>
 
+          {course.schedule && (
+            <section>
+              <>
+                <h2 className="section-title">Course Schedule</h2>
+                <CourseSchedule schedule={course.schedule} />
+              </>
+            </section>
+          )}
+
           <section className="course-section">
             <h2 className="section-title">What Makes Us Different?</h2>
             <div className="what-makes-us-different-content">
@@ -175,21 +184,9 @@ const CourseDetail = () => {
                     <CheckCircle className="topic-icon" size={24} />{" "}
                     {item.title}
                   </h3>
-                  {/* <p className="what-makes-us-different-para">
-                    {item.description}
-                  </p> */}
                 </div>
               ))}
             </div>
-          </section>
-
-          <section>
-            {course.schedule && (
-              <>
-                <h2 className="section-title">Course Schedule</h2>
-                <CourseSchedule schedule={course.schedule} />
-              </>
-            )}
           </section>
         </div>
 
@@ -227,9 +224,8 @@ const CourseDetail = () => {
             <div className="sidebar-card">
               <div className="price-section">
                 <span className="check-availability-label">
-                  CHECK AVAILABILITY:
+                  Check Scholarship Seat Availability
                 </span>
-                {/* <span className="price-value">₹{course.price}</span> */}
               </div>
               <div className="features-list">
                 <div className="feature-item">
@@ -237,22 +233,18 @@ const CourseDetail = () => {
                 </div>
                 <div className="feature-item">
                   <CheckCircle size={20} />
-                  <span>Scholarship Seat</span>
-                </div>
-                <div className="feature-item">
-                  <CheckCircle size={20} />
                   <span>Paid Freelancing Opportunity</span>
                 </div>
                 <div className="feature-item">
                   <CheckCircle size={20} />
-                  <span>Installment Option</span>
+                  <span>Easy Installment Option</span>
                 </div>
               </div>
               <button
                 className="enroll-button-large check-availability-button"
                 onClick={sendCheckAvailabilityWhatsappMessage}
               >
-                Check availability now!
+                → Check Now
               </button>
             </div>
           </div>
@@ -303,9 +295,7 @@ const CourseSchedule = ({ schedule }: CourseScheduleProps) => {
               {week.details.map((detail, idx) => (
                 <div key={idx} className="course-schedule-detail-item">
                   <CheckCircle className="topic-icon" size={24} />{" "}
-                  <p className="course-schedule-what-learn">
-                    {detail}
-                  </p>
+                  <p className="course-schedule-what-learn">{detail}</p>
                 </div>
               ))}
               <p className="course-schedule-outcome">{week.outcome}</p>
