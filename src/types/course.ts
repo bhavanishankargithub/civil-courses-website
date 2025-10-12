@@ -1,4 +1,4 @@
-import type { ScheduleArrayType } from "../data/schedule";
+import type { ScheduleDetail } from "../data/schedule";
 
 export interface Course {
   id: string;
@@ -12,5 +12,5 @@ export interface Course {
   price: number;
   topics: string[];
   created_at: string;
-  schedule?: ScheduleArrayType;
+  schedule?: ScheduleDetail[];
 }

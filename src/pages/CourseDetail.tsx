@@ -4,7 +4,7 @@ import "./CourseDetail.css";
 import { Clock, Award, BookOpen, ArrowLeft, CheckCircle } from "lucide-react";
 import { sendWhatsappMessage } from "../data/helper";
 import { useLayoutEffect, useRef, useState } from "react";
-import type { ScheduleArrayType } from "../data/schedule";
+import type { ScheduleDetail } from "../data/schedule";
 import DownArrowIcon from "../assets/downArrowIcon.svg";
 
 const whatMakesUsDifferentData = [
@@ -69,6 +69,10 @@ const CourseDetail = () => {
   const navigate = useNavigate();
 
   const course = courses.find((c) => c.id === id);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const sendCheckAvailabilityWhatsappMessage = () => {
     sendWhatsappMessage(
@@ -261,12 +265,11 @@ const CourseDetail = () => {
 export default CourseDetail;
 
 type CourseScheduleProps = {
-  schedule: ScheduleArrayType;
+  schedule: ScheduleDetail[];
 };
 
 const CourseSchedule = ({ schedule }: CourseScheduleProps) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [bonusExpand, setBonusExpand] = useState(false);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -299,49 +302,17 @@ const CourseSchedule = ({ schedule }: CourseScheduleProps) => {
             <div className="course-schedule-details">
               {week.details.map((detail, idx) => (
                 <div key={idx} className="course-schedule-detail-item">
+                  <CheckCircle className="topic-icon" size={24} />{" "}
                   <p className="course-schedule-what-learn">
-                    {detail.whatWillYouLearn}
+                    {detail}
                   </p>
-                  <p className="course-schedule-outcome">{detail.outCome}</p>
                 </div>
               ))}
+              <p className="course-schedule-outcome">{week.outcome}</p>
             </div>
           </ExpandableSection>
         </div>
       ))}
-      <div className="course-schedule-week">
-        <div
-          className="course-schedule-week-header"
-          onClick={() => setBonusExpand((prev) => !prev)}
-        >
-          <span className="course-schedule-week-title">
-            🎓 Bonus: Part-Time Freelancing Opportunity {"(1 Month)"}
-          </span>
-          <span
-            className={`course-schedule-toggle-icon ${
-              bonusExpand ? "rotate-icon" : ""
-            }`}
-          >
-            <img src={DownArrowIcon} alt="Down Arrow" width={25} height={25} />
-          </span>
-        </div>
-
-        <ExpandableSection isExpanded={bonusExpand}>
-          <div className="course-schedule-details">
-            <div className="course-schedule-detail-item">
-              <p className="course-schedule-what-learn">
-                🧩 Description: Work on a real client project under mentorship —
-                independently develop a complete Revit Structural model.
-              </p>
-              <p className="course-schedule-outcome">
-                🎯 Learning Outcome: Apply your knowledge on live projects,
-                manage deadlines, and gain freelancing experience before you
-                graduate.
-              </p>
-            </div>
-          </div>
-        </ExpandableSection>
-      </div>
     </div>
   );
 };

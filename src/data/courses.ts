@@ -2,7 +2,7 @@ import type { Course } from "../types/course";
 import ETBSCourse from "../assets/etbsCourseImage.jpg";
 import AutoCadCourseImg from "../assets/autocadCourseImage.jpg";
 import RevitCourseImage from "../assets/revitCourseImage.jpg";
-import { scheduleForCourse1 } from "./schedule";
+import { autoCadScheduleArr, scheduleArrRevitCourse } from "./schedule";
 
 export const courses: Course[] = [
   {
@@ -25,7 +25,7 @@ export const courses: Course[] = [
       "Industry Workflows",
     ],
     created_at: new Date().toISOString(),
-    schedule: scheduleForCourse1,
+    schedule: scheduleArrRevitCourse,
   },
   {
     id: "3",
@@ -47,6 +47,7 @@ export const courses: Course[] = [
       "CAD Software",
     ],
     created_at: new Date().toISOString(),
+    schedule: autoCadScheduleArr,
   },
   {
     id: "2",

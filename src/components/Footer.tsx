@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="footer-contact">
               <div className="contact-item">
                 <MapPin size={18} />
-                <span>123 Engineering Plaza, Tech City, TC 12345</span>
+                <span>W84, Gandhi Vihar, Ravi Nagar, Hapur, NCR 245101, India</span>
               </div>
               <div className="contact-item">
                 <Phone size={18} />
@@ -106,7 +106,7 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <Mail size={18} />
-                <span>info@revinxt.academy</span>
+                <span>Info@revinxt.com</span>
               </div>
             </div>
           </div>
