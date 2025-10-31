@@ -2,9 +2,14 @@ import { courses } from "../data/courses";
 import CourseCard from "./CourseCard";
 import "./CoursesSection.css";
 
-const CoursesSection = () => {
+type CoursesSectionProps = {
+  coursesSectionRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const CoursesSection = (props: CoursesSectionProps) => {
+  const { coursesSectionRef } = props;
   return (
-    <section className="courses-section">
+    <section className="courses-section" ref={coursesSectionRef}>
       <div className="courses-container">
         <div className="courses-header">
           <h2 className="courses-title">Our Featured Courses</h2>

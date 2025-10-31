@@ -3,38 +3,22 @@ import CoursesSection from "../components/CoursesSection";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import "./Home.css";
-import CustomPopup from "../components/CustomPopup";
-import ContactUsForm from "../components/ContactUsForm";
-import WhatsapIcon from "../assets/whatsAppIcon.svg";
-import PhoneIcon from "../assets/phoneIcon.jpg";
-import { OWNER_WHATSAPP_NUMBER } from "../data/config";
+import { useCallback, useRef } from "react";
+import WhatsapAndPhone from "../components/WhatsapAndPhone";
 
 const Home = () => {
+  const coursesSectionRef = useRef<HTMLDivElement | null>(null);
+  const handleExploreClick = useCallback(() => {
+    coursesSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
     <div>
-      <Hero />
-      <CoursesSection />
+      <Hero handleExploreClick={handleExploreClick} />
+      <CoursesSection coursesSectionRef={coursesSectionRef}/>
       <Carousel />
       <Footer />
-      <div className="whatsAppAndPhoneIcon">
-        <a href={`tel:${OWNER_WHATSAPP_NUMBER}`} aria-label="Call us">
-          <img
-            src={PhoneIcon}
-            alt="whatsapp"
-            className="whatsAppIconImage phoneIconImage"
-          />
-        </a>
-        <CustomPopup
-          trigger={
-            <img
-              src={WhatsapIcon}
-              alt="whatsapp"
-              className="whatsAppIconImage"
-            />
-          }
-          content={<ContactUsForm />}
-        />
-      </div>
+      <WhatsapAndPhone />
     </div>
   );
 };

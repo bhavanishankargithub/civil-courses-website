@@ -38,7 +38,7 @@
 }
 
 .course-card:hover .course-card-image {
-  transform: scale(1.15) rotate(2deg);
+  transform: scale(1.10);
 }
 
 .course-card-overlay {

@@ -6,6 +6,7 @@ import { sendWhatsappMessage } from "../data/helper";
 import { useLayoutEffect, useRef, useState } from "react";
 import type { ScheduleDetail } from "../data/schedule";
 import DownArrowIcon from "../assets/downArrowIcon.svg";
+import WhatsapAndPhone from "../components/WhatsapAndPhone";
 
 const whatMakesUsDifferentData = [
   {
@@ -91,6 +92,7 @@ const CourseDetail = () => {
 
   return (
     <div className="course-detail-page">
+      <WhatsapAndPhone />
       <div className="course-detail-hero">
         <div className="course-detail-hero-overlay"></div>
         <img

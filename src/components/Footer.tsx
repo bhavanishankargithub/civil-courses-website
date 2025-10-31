@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="footer-contact">
               <div className="contact-item">
                 <MapPin size={18} />
-                <span>W84, Gandhi Vihar, Ravi Nagar, Hapur, NCR 245101, India</span>
+                <span>514A, 5th Floor, Somdutt Chamber 2, Bhikaji Cama Place, New Delhi 110066</span>
               </div>
               <div className="contact-item">
                 <Phone size={18} />

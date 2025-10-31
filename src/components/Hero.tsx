@@ -4,7 +4,11 @@ import Logo from "../assets/logo.jpg";
 import CustomPopup from "./CustomPopup";
 import ContactUsForm from "./ContactUsForm";
 
-const Hero = () => {
+type HeroProps = {
+  handleExploreClick: () => void;
+};
+const Hero = (props: HeroProps) => {
+  const { handleExploreClick } = props;
   return (
     <>
       <Navbar />
@@ -26,7 +30,7 @@ const Hero = () => {
               the modern construction world.
             </p>
             <div className="hero-cta">
-              <button className="hero-button primary">Explore Courses</button>
+              <button className="hero-button primary" onClick={handleExploreClick}>Explore Courses</button>
               <CustomPopup
                 trigger={
                   <button className="hero-button book-free-session-button secondary">
